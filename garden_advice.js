@@ -4,26 +4,31 @@ let season = prompt("Enter the season (e.g. summer or winter):");
 // Prompt the user for the plant type
 let plantType = prompt("Enter the plant type: flower or vegetable");
 
-// Variable to hold gardening advice
-let advice = "";
 
-// Determine advice based on the season
-if (season === "summer") {
-    advice += "Water your plants regularly and provide some shade.\n";
-} else if (season === "winter") {
-    advice += "Protect your plants from frost with covers.\n";
-} else {
-    advice += "No advice for this season.\n";
+// Function to get advice based on the season
+function getSeasonAdvice(season) {
+    if (season === "summer") {
+        return "Water your plants regularly and provide some shade.";
+    } else if (season === "winter") {
+        return "Protect your plants from frost with covers.";
+    } else {
+        return "No advice for this season.";
+    }
 }
 
-// Determine advice based on the plant type
-if (plantType === "flower") {
-    advice += "Use fertiliser to encourage blooms.";
-} else if (plantType === "vegetable") {
-    advice += "Keep an eye out for pests!";
-} else {
-    advice += "No advice for this type of plant.";
+// Function to get advice based on the plant type
+function getPlantAdvice(plantType) {
+    if (plantType === "flower") {
+        return "Use fertiliser to encourage blooms.";
+    } else if (plantType === "vegetable") {
+        return "Keep an eye out for pests!";
+    } else {
+        return "No advice for this type of plant.";
+    }
 }
+
+// Get combined advice for the given season and plant type
+let advice = getSeasonAdvice(season) + "\n" + getPlantAdvice(plantType);
 
 // Log the generated advice to the console
 console.log(advice);
